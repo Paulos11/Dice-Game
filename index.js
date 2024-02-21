@@ -1,37 +1,30 @@
 function showRandomImage() {
   var randomNumber = Math.floor(Math.random() * 6) + 1; 
-
-  if (randomNumber == 1) {
-      document.getElementById("diceImage").src = "./img/dice1.png"; 
-  } else if (randomNumber == 2) {
-      document.getElementById("diceImage").src = "./img/dice2.png"; 
-  } else if (randomNumber == 3) {
-      document.getElementById("diceImage").src = "./img/dice3.png"; 
-  } else if (randomNumber == 4) {
-      document.getElementById("diceImage").src = "./img/dice4.png"; 
-  } else if (randomNumber == 5) {
-      document.getElementById("diceImage").src = "./img/dice5.png"; 
-  } else {
-      document.getElementById("diceImage").src = "./img/dice6.png"; 
-  }
+  document.getElementById("diceImage").src = "./img/dice" + randomNumber + ".png"; 
+  return randomNumber;
 }
-
 
 function showRandomImage1() {
   var randomNumber = Math.floor(Math.random() * 6) + 1; 
+  document.getElementById("diceImage1").src = "./img/dice" + randomNumber + ".png"; 
+  return randomNumber;
+}
 
-  if (randomNumber == 1) {
-      document.getElementById("diceImage1").src = "./img/dice1.png"; 
-  } else if (randomNumber == 2) {
-      document.getElementById("diceImage1").src = "./img/dice2.png"; 
-  } else if (randomNumber == 3) {
-      document.getElementById("diceImage1").src = "./img/dice3.png"; 
-  } else if (randomNumber == 4) {
-      document.getElementById("diceImage1").src = "./img/dice4.png"; 
-  } else if (randomNumber == 5) {
-      document.getElementById("diceImage1").src = "./img/dice5.png"; 
+function win() {
+  var result1 = showRandomImage();
+  var result2 = showRandomImage1();
+
+  if (result1 > result2) {
+      document.getElementById("win").innerHTML = "Player One Wins!";
+  } else if (result1 < result2) {
+      document.getElementById("win").innerHTML = "Player Two Wins!";
   } else {
-      document.getElementById("diceImage1").src = "./img/dice6.png"; 
+      document.getElementById("win").innerHTML = "It's a tie!";
   }
 }
 
+function rollDice() {
+  showRandomImage();
+  showRandomImage1();
+  win();
+}

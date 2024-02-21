@@ -3,47 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Dice Game</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="header">
-      <h1>Dice Game</h1>
-     
+      <h1 id="win">Dice Game</h1>
     </div>
-<div class="main">
-  <div class="hr">
 
-  </div>
-
-</div>
-    
-    
     <div class="dbx">
-    <div class="d1">
-      <h1>Player 1</h1>
-      <img
-        id="diceImage"
-        src="./img/dice1.png"
-        alt="Dice Image"
-        onclick="showRandomImage()"
-      />
+      <div class="d1">
+        <h2>Player 1</h2>
+        <img
+          id="diceImage"
+          src="./img/dice1.png"
+          alt="Dice Image"
+          onclick="showRandomImage()"
+        />
+      </div>
+
+      <div class="d2">
+        <h2>Player 2</h2>
+        <img
+          id="diceImage1"
+          src="./img/dice1.png"
+          alt="Dice Image"
+          onclick="showRandomImage1()"
+        />
+      </div>
     </div>
 
-    <div class="d2">
-      <h1>Player 2</h1>
-      <img
-        id="diceImage1"
-        src="./img/dice1.png"
-        alt="Dice Image"
-        onclick="showRandomImage1()"
-      />
+    <div class="btn">
+      <button id="rollDiceButton" onclick="rollDice()">Roll Dice</button>
     </div>
-  </div>
-<div class="btn">
-  <button id="diceImage diceImage1" onclick="showRandomImage(), showRandomImage1()""> Click Me</button>
-</div>
-    
+
+    <footer class="footer">
+      <p>Code by <a href="#">Paul Lakandri</a></p>
+    </footer>
+
     <script src="./index.js"></script>
   </body>
 </html>
